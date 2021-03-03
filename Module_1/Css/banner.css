@@ -1,0 +1,177 @@
+/*html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins,*/
+/*kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr,*/
+/*th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio,*/
+/*video {*/
+/*    border: 0pt none;*/
+/*    font: inherit;*/
+/*    margin: 0pt;*/
+/*    padding: 0pt;*/
+/*}*/
+/*article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {*/
+/*    display: block;*/
+/*}*/
+/*body {*/
+/*    line-height: 1;*/
+/*}*/
+/*ol, ul {*/
+/*    list-style: none outside none;*/
+/*}*/
+/*blockquote, q {*/
+/*    quotes: none;*/
+/*}*/
+/*blockquote:before, blockquote:after, q:before, q:after {*/
+/*    content: none;*/
+/*}*/
+/*table {*/
+/*    border-collapse: collapse;*/
+/*    border-spacing: 0pt;*/
+/*}*/
+/*a{*/
+/*    text-decoration:none;*/
+/*}*/
+/*.clearfix:after {*/
+/*    content: ".";*/
+/*    display: block;*/
+/*    clear: both;*/
+/*    visibility: hidden;*/
+/*    line-height: 0;*/
+/*    height: 0;*/
+/*    font-size: 0 !important;*/
+/*}*/
+/*.clearfix {*/
+/*    display: inline-block;*/
+/*    width:100%;*/
+/*}*/
+/*html[xmlns] .clearfix {*/
+/*    display: block;*/
+/*}*/
+/** html .clearfix {*/
+/*    height: 1%;*/
+/*}*/
+/*---end reset---*/
+body{
+    background-color:#f1f1f1;
+}
+.main{
+    width:960px;
+    margin:120px auto;
+}
+.kwick{
+    width:960px;
+    height:400px;
+    overflow:hidden;
+    position:relative;
+    border-radius:5px;
+    box-shadow:0 0 5px rgba(0,0,0,0.4);
+}
+.kwick li{
+    position:absolute;
+    top:0;
+    -moz-transition:all 0.5s ease-in-out;
+    -webkit-transition:all 0.5s ease-in-out;
+    -o-transition:all 0.5s ease-in-out;
+    -ms-transition:all 0.5s ease-in-out;
+    transition:all 0.5s ease-in-out;
+}
+.kwick li:nth-child(1){
+    left:0;
+}
+.kwick li:nth-child(2){
+    left:192px;
+}
+.kwick li:nth-child(3){
+    left:384px;
+}
+.kwick li:nth-child(4){
+    left:576px;
+}
+.kwick li:nth-child(5){
+    left:768px;
+}
+.kwick a{
+    position:relative;
+    display:block;
+    box-shadow:0 0 7px rgba(0,0,0,1)
+}
+.kwick img{
+    display:block;
+}
+.kwick p{
+    position:absolute;
+    left:0;
+    bottom:-50px;
+    width:728px;
+    padding:0 20px;
+    height:50px;
+    line-height:50px;
+    font-family:helvetica,arial,sans-serif;
+    color:#fff;
+    background-color:rgba(0,0,0,0.9);
+    text-shadow:0 1px 0 #000;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    -moz-transition:all 0.5s ease;
+    -webkit-transition:all 0.5s ease;
+    -o-ztransition:all 0.5s ease;
+    -ms-transition:all 0.5s ease;
+    transition:all 0.5s ease;
+}
+.kwick:hover li:nth-child(2){
+    left: 40px;
+}
+.kwick:hover li:nth-child(3){
+    left: 96px;
+}
+.kwick:hover li:nth-child(4){
+    left: 144px;
+}
+kwick li:nth-child(1):hover ~ li:nth-child(5),
+.kwick li:nth-child(2):hover ~ li:nth-child(5),
+.kwick li:nth-child(3):hover ~ li:nth-child(5),
+.kwick li:nth-child(4):hover ~ li:nth-child(5) {
+    left:912px; }
+.kwick li:nth-child(1):hover ~ li:nth-child(4),
+.kwick li:nth-child(2):hover ~ li:nth-child(4),
+.kwick li:nth-child(3):hover ~ li:nth-child(4) {
+    left:864px; }
+.kwick li:nth-child(1):hover ~ li:nth-child(3),
+.kwick li:nth-child(2):hover ~ li:nth-child(3) {
+    left:816px; }
+.kwick li:nth-child(1):hover ~ li:nth-child(2){
+    left:768px; }
+.kwick li:nth-child(2):hover{
+    left:48px; }
+.kwick li:nth-child(3):hover{
+    left:96px; }
+.kwick li:nth-child(4):hover{
+    left:144px; }
+.kwick li:nth-child(5):hover{
+    left:192px; }
+.kwick li:hover p{
+    bottom:0; }
+.shadow{
+    position:relative; }
+.shadow:before{
+    content:"";
+    position:absolute;
+    left:100px;
+    top:2px;
+    background-color:transparent;
+    width:760px;
+    height:10px;
+    border-radius:800px/10px;
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+    z-index:-1; }
+.shadow:after{
+    content:"";
+    position:absolute;
+    left:100px;
+    bottom:2px;
+    background-color:transparent;
+    width:760px;
+    height:10px;
+    border-radius:800px/10px;
+    box-shadow:0 0 20px rgba(0,0,0,1);
+    z-index:-1; }
+
