@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng kí</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/style_validate_bootstrap_3.css">
+</head>
+<body tyle="background-color:powderblue;">
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h2 class="text-center" style="color:blue;font-family:verdana;" >Đăng kí phòng khách sạn</h2>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label for="usr">Họ và Tên:</label>
+                <input required="true" type="text" class="form-control" id="usr">
+            </div>
+            <div class="form-group">
+                <label for="cmnd">Nhập số CMND:</label>
+                <input required="true" type="number" class="form-control" id="cmnd" minlength="8" maxlength="8">
+            </div>
+            <div class="form-group">
+                <label for="birthday">Birthday:</label>
+                <input type="date" class="form-control" id="birthday">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input required="true" type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" class="form-control" id="address">
+            </div>
+            <div class="form-group">
+                <label for="loaik">Loại Customer:</label>
+                <select id="loaik" class="form-control">
+                    <option>Diamond</option>
+                    <option>Platinum</option>
+                    <option>Gold</option>
+                    <option>Silver</option>
+                    <option>Member</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="sale">Nhập mã giảm giá:</label>
+                <input required="true" type="text" class="form-control" id="sale">
+            </div>
+            <div class="form-group">
+                <label for="sl_nguoi" >Số lượng người đi kèm:</label>
+                <input required="true" type="number" class="form-control" id="sl_nguoi">
+            </div>
+            <div class="form-group">
+                <label for="so_ngay" >Số ngày thuê:</label>
+                <input required="true" type="number" class="form-control" id="so_ngay">
+            </div>
+            <div class="form-group">
+                <label for="loai_dv">Loại dịch vụ:</label>
+                <select id="loai_dv" class="form-control">
+                    <option>Villa</option>
+                    <option>House</option>
+                    <option>Room</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="loai_p">Loại phòng thuê:</label>
+                <select id="loai_p" class="form-control">
+                    <option>Vip</option>
+                    <option>Business</option>
+                    <option>Normal</option>
+                </select>
+            </div>
+        </div>
+            <button class="btn btn-success" onclick="myFunction()"  >Xem kết quả</button>
+<!--            <script>-->
+<!--                function myFunction(){-->
+<!--                    document.getElementById("usr").style.color = "red";-->
+<!--                    document.getElementById("result").style.fontSize = "20px";-->
+<!--                    document.getElementById("result").style.fontWeight = "bold";-->
+<!--                }-->
+<!--            </script>-->
+        <div class="container">
+            <h2>Thông Tin</h2>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Họ và Tên</th>
+                    <th>Số CMND</th>
+                    <th>Ngày Sinh</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Loại Customer</th>
+                    <th>Mã Giảm Giá</th>
+                    <th>Số Lượng Người</th>
+                    <th>Số Ngày Ở</th>
+                    <th>Loại Dịch Vụ</th>
+                    <th>Loại Phòng</th>
+                    <th>Giá Tiền</th>
+
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td id="name_tb"></td>
+                    <td id="cmnd_tb"></td>
+                    <td id="birthday_tb"></td>
+                    <td id="email_tb"></td>
+                    <td id="adress_tb"></td>
+                    <td id="loaik_tb"></td>
+                    <td id="sale_tb"></td>
+                    <td id="slng_tb"></td>
+                    <td id="so_ngay_tb"></td>
+                    <td id="loai_dv_tb"></td>
+                    <td id="loai_p_tb"></td>
+                    <td id="gia_p_tb"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <script language="javascript">
+            function myFunction() {
+                var i;
+                var reg_email = /^[A-Za-z0-9]+([_\.\-]?[A-Za-z0-9])*@[A-Za-z0-9]+([\.\-]?[A-Za-z0-9]+)*(\.[A-Za-z]+)+$/;
+                var reg_soduong=/^\d*$/;
+                var reg_kitu =/^([0-9]{8}|1[89]00[0-9]{4})$/;
+                var email = document.getElementById('email');
+                var so_cmnd=document.getElementById('cmnd');
+                if(reg_soduong.test(so_cmnd.value)==false)
+                    i += alert("Số cmnd chỉ chứa số dương");
+                else if(reg_kitu.test(so_cmnd.value)==false)
+                    i += alert("Số cmnd phải đủ 8 chứ số");
+                else if (email.value == "")
+                    i += alert("Không được bỏ trống email.");
+                else if (reg_email.test(email.value) == false)
+                        i += alert("Email không hợp lệ");
+                else {
+                    var name = document.getElementById('usr').value;
+                    var cmnd = document.getElementById('cmnd').value;
+                    var birthday = document.getElementById('birthday').value;
+                    var email = document.getElementById('email').value;
+                    var address = document.getElementById('address').value;
+                    var loaik = document.getElementById('loaik').value;
+                    var sale = document.getElementById('sale').value;
+                    var sl_nguoi = document.getElementById('sl_nguoi').value;
+                    var so_ngay = document.getElementById('so_ngay').value;
+                    var loai_dv = document.getElementById('loai_dv').value;
+                    var loai_p = document.getElementById('loai_p').value;
+
+                    document.getElementById("name_tb").innerText = name;
+                    document.getElementById("cmnd_tb").innerText = cmnd;
+                    document.getElementById("birthday_tb").innerText = birthday;
+                    document.getElementById("email_tb").innerText = email;
+                    document.getElementById("adress_tb").innerText = address;
+                    document.getElementById("loaik_tb").innerText = loaik;
+                    document.getElementById("sale_tb").innerText = sale;
+                    document.getElementById("slng_tb").innerText = sl_nguoi;
+                    document.getElementById("so_ngay_tb").innerText = so_ngay;
+                    document.getElementById("loai_dv_tb").innerText = loai_dv;
+                    document.getElementById("loai_p_tb").innerText = loai_p;
+                    document.getElementById("gia_p_tb").innerText = getGia();
+
+                    function getGia() {
+                        return (loai_dv == "Villa" ? 500 : loai_dv == "House" ? 300 : 100) * so_ngay * (1 - sale / 100);
+                    }
+
+                }
+            }
+        </script>
+    </div>
+</div>
+
+
+
+</body>
+</html>
