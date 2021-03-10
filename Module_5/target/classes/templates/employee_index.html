@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Demo Spring</title>
+</head>
+<body>
+<div align="center">
+    <h1>Customer List</h1>
+    <a th:href="@{/employee/new}">Create New Customer</a> </div>
+<br/><br/>
+<form class="form-inline pull-right" action="#"
+      th:action="@{/employee/search}" method="GET" align="center">
+    <div class="form-group">
+        <input type="number" class="form-control" name="s"
+               placeholder="Nhap Ma Khach hang..." />
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+<br/><br/>
+<table border="1" cellpadding="10" align="center">
+    <thead>
+    <tr>
+        <th>MaNhanVien</th>
+        <th>TenKhachHang</th>
+        <th>NgaySinh</th>
+        <th>SoDienThoai</th>
+        <th>Gmail</th>
+        <th>DiaChi</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="nv : ${listsnv}">
+        <td th:text="${nv.MaNhanVien}">MaNhanVien</td>
+        <td th:text="${nv.TenNhanVien}">TenNhanVien</td>
+        <td th:text="${nv.NgaySinh}">NgaySinh</td>
+        <td th:text="${nv.SoDienThoai}">SoDienThoai</td>
+        <td th:text="${nv.Gmail}">Gmail</td>
+        <td th:text="${nv.DiaChi}">DiaChi</td>
+        <td>
+            <a th:href="@{'/employee/edit/'+${nv.getMaNhanVien()}}">Edit</a>
+            &nbsp;&nbsp;&nbsp;
+            <a th:href="@{'/employee/delete/'+${nv.getMaNhanVien()}}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div align="center">
+    <a th:href="@{'/trangchu'}">Về trang chủ</a> </div>
+<br/>
+
+</body>
+</html>

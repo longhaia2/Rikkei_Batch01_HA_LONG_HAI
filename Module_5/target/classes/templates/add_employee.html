@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Create New Customer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="../static/css/edit_ngay.css">
+    <script src="../static/js/edit_date.js"></script>
+</head>
+<body>
+<div align="center">
+    <h1>Create New Employee</h1>
+    <br />
+    <form action="#" th:action="@{/employee/save}" th:object="${employee}"
+          method="post">
+
+        <table border="0" cellpadding="10">
+
+            <tr>
+                <td>Ten Nhan Vien:</td>
+                <td><input type="text" th:field="*{TenNhanVien}" /></td>
+            </tr>
+            <tr>
+                <td>NgaySinh:</td>
+                <td><input type="text" th:field="*{NgaySinh}" /></td>
+            </tr>
+            <tr>
+                <td>So Dien Thoai:</td>
+                <td><input type="String" th:field="*{SoDienThoai}" /></td>
+            </tr>
+            <tr>
+                <td>Gmail:</td>
+                <td><input type="String" th:field="*{Gmail}" /></td>
+            </tr>
+            <tr>
+                <td>Dia Chi:</td>
+                <td><input type="text" th:field="*{DiaChi}" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Save</button> </td>
+            </tr>
+        </table>
+        <!--        <div class="date-picker">-->
+        <!--            <div class="input" th:field="*{NgaySinh}" >-->
+        <!--                <button><i class="fa fa-calendar"></i></button>-->
+        <!--            </div>-->
+        <!--            <div class="calendar"></div>-->
+        <!--        </div>-->
+
+    </form>
+</div>
+
+</body>
+</html>

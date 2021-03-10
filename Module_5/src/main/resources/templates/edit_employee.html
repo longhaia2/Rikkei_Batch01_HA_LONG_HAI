@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Insert title here</title>
+</head>
+<body>
+<div align="center">
+    <h1>Edit Custumer</h1>
+    <br />
+    <form action="#" th:action="@{/employee/save}" th:object="${employee}" method="post">
+
+        <table border="0" cellpadding="10">
+            <tr>
+                <td>Ma Nhan Vien:</td>
+                <td>
+                    <input type="number" th:field="*{MaNhanVien}" readonly="readonly" />
+                </td>
+            </tr>
+            <tr>
+                <td>Ten Nhan Vien:</td>
+                <td><input type="text" th:field="*{TenNhanVien}" /></td>
+            </tr>
+            <tr>
+                <td>Ngay Sinh:</td>
+                <td><input type="text" th:field="*{NgaySinh}" /></td>
+            </tr>
+            <tr>
+                <td>So Dien Thoai:</td>
+                <td><input type="number" th:field="*{SoDienThoai}" /></td>
+            </tr>
+            <tr>
+                <td>Gmail:</td>
+                <td><input type="text" th:field="*{Gmail}" /></td>
+            </tr>
+            <tr>
+                <td>Dia Chi:</td>
+                <td><input type="text" th:field="*{DiaChi}" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Save</button> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>
