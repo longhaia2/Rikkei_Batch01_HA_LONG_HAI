@@ -1,0 +1,35 @@
+<app-header></app-header>
+<body style="background-color: azure">
+<div class="container">
+  <br>
+  <h2 align="center">Quản Lý Nhân Viên</h2>
+  <br><br>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Mã Nhân Viên</th>
+      <th>Tên Nhân Viên</th>
+      <th>Ngày Sinh</th>
+      <th>Số Điện Thoại</th>
+      <th>Email</th>
+      <th>Địa Chỉ</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let nhanviens of nhanvien">
+      <td>{{nhanviens.MaNhanVien}}</td>
+      <td>{{nhanviens.TenNhanVien}}</td>
+      <td>{{nhanviens.NgaySinh}}</td>
+      <td>{{nhanviens.SoDienThoai}}</td>
+      <td>{{nhanviens.Email}}</td>
+      <td>{{nhanviens.DiaChi}}</td>
+      <td><button [routerLink]="['/employee-add']" type="button" class="btn btn-primary">Add</button>
+      <button [routerLink]="['/employee-edit']"type="button" class="btn btn-info">Edit</button>
+      <button type="button" class="btn btn-danger">Delete</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+<app-footer></app-footer>
